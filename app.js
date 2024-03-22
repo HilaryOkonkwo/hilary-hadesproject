@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const app = express();
 const port = 3003;
 
-// Set up MySQL connection
+// Set up MySQL connections
 const db = mysql.createConnection({
   host: '159.138.164.61',
   user: 'sammy',
