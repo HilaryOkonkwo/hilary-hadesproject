@@ -1,3 +1,13 @@
+// Function to display a pop-up message
+function displayPopupMessage() {
+  alert("Welcome! Thank you for visiting our landing page.");
+}
+
+// Call the function to display the pop-up message when the page loads
+window.onload = function() {
+  displayPopupMessage();
+}
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
@@ -13,15 +23,7 @@ const db = mysql.createConnection({
   port: '3306',
 });
 
-// Function to display a pop-up message
-function displayPopupMessage() {
-  alert("Welcome! Thank you for visiting our landing page.");
-}
 
-// Call the function to display the pop-up message when the page loads
-window.onload = function() {
-  displayPopupMessage();
-}
 
 db.connect((err) => {
   if (err) {
