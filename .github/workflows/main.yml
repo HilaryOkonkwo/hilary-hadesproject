@@ -1,0 +1,29 @@
+name: CI/CD to Huawei SWR and CCE
+
+on:
+  push:
+    branches:
+      - master  # Trigger CI/CD when code is pushed to the 'master' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to Huawei Cloud SWR
+        uses: huaweicloud/swr-login@v2.1.0
+        with:
+          access-key-id: ${{ secrets.ACCESSKEY }}
+          access-key-secret: ${{ secrets.SECRETACCESSKEY }}
+          region: af-south-1
+          project_id: "eecc7ec81ad346adbcde0a07fa343cb0"
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:latest
+          docker push  swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:latest
+
+          
