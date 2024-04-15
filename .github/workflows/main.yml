@@ -19,7 +19,6 @@ jobs:
           access-key-id: ${{ secrets.ACCESSKEY }}
           access-key-secret: ${{ secrets.SECRETACCESSKEY }}
           region: af-south-1
-          project_id: "eecc7ec81ad346adbcde0a07fa343cb0"
 
       - name: Build and push Docker image
         run: |
