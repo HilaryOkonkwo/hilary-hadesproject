@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:latest
-          docker push  swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:latest
+          docker build -t swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:${{ github.sha }} .
+          docker push  swr.af-south-1.myhuaweicloud.com/hilary-hades/hilaryokonkwo:${{ github.sha }}
 
           
