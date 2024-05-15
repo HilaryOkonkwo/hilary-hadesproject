@@ -6,7 +6,7 @@ const port = 3003;
 
 // Set up MySQL connection
 const db = mysql.createConnection({
-  host: '110.238.72.147',
+  host: '110.238.74.168',
   user: 'sammy',
   password: '#Password123',
   database: 'hilary',
